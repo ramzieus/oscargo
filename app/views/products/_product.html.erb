@@ -1,0 +1,13 @@
+<div id="<%= dom_id product %>" class="flex justify-between items-center">
+  <% if action_name != "show" %>
+    <%= product.name %>
+
+    <img src="<%= url_for(product.image) %>" alt="<%= product.name %>" style="width: 200px; height: 80px; object-fit: cover;">
+
+
+    <%= link_to "OCR", generate_ocr_url(product), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this product', edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
